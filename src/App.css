@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  overflow: hidden;
+}
+
+.carousel {
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.6s ease;
+  position: relative;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  width: 100%;
+  animation: fadein 1s ease, slideup 0.6s ease;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
+.card h2 {
+  font-size: 2.2rem;
+  color: #d6336c;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 1.3rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.mensaje-extra {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  font-style: italic;
+  color: #6b6b6b;
+}
+
+.boton {
+  margin-top: 1.5rem;
+  background: linear-gradient(to right, #f06292, #f48fb1);
+  border: none;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.boton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.botones {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.2rem;
+  z-index: 2;
+}
+
+.botones button {
+  background-color: #d6336c;
+  border: none;
+  color: white;
+  padding: 0.7rem 1.3rem;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.botones button:hover {
+  transform: scale(1.1);
+}
+
+.swipe-tip {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+  z-index: 2;
+}
+
+/* Animaciones */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideup {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Corazones flotantes */
+.hearts-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  width: 20px;
+  height: 20px;
+  background-color: #ff4d6d;
+  transform: rotate(45deg);
+  animation: floatUp 6s infinite linear;
+  opacity: 0.8;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff4d6d;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card h2 {
+    font-size: 1.6rem;
+  }
+
+  .card p {
+    font-size: 1.1rem;
+  }
+
+  .mensaje-extra {
+    font-size: 1rem;
+  }
+
+  .botones button {
+    font-size: 1.4rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .boton {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+.bienvenida {
+  background-color: #ffe6f0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.titulo-bienvenida {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #d6336c;
+  text-align: center;
+  z-index: 2;
+  animation: fadein 1s ease, slideup 0.5s ease;
+}
